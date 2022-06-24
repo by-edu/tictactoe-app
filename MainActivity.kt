@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val btnPlay = findViewById<Button>(R.id.btnPlay)
         btnPlay.setOnClickListener {
 
-            // need to actually use onClick
+            // onClick is used in xml file i think????
 
         }
     }
@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val editName = findViewById<EditText>(R.id.edtName)
         // This should link to the name edit
+        val grabbedName = editName.getText().toString()
 
         val rgSymbolSelect: RadioGroup = findViewById(R.id.radioSymbol)
         val rgTurn: RadioGroup = findViewById(R.id.radioTurn)
@@ -46,9 +47,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val rbChosenTurn : RadioButton = findViewById(rgTurn.checkedRadioButtonId)
         // id should be either 'buttonYes' (which is first) or 'buttonNo' (which is last)
 
+
+        // need to pass info into tictactoe step
+
+        System.out.println(grabbedName)
+        // This is just to test if the override and the editname works
+
         val intent = Intent(this, TicTacToeActivity::class.java)
+        intent.putExtra("dataEnter", grabbedName)
         startActivity(intent)
         // This should start the tictactoe class i believe
+        // i think this is also used to move data to next activity...
     }
 
 

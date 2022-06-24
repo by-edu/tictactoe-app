@@ -39,7 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="noughts"
-            android:onClick="checkButton"
             android:checked="true"
             android:id="@+id/radioNoughts"
         />
@@ -48,9 +47,9 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="crosses"
-            android:onClick="checkButton"
             android:id="@+id/radioCrosses"
             />
+
     </RadioGroup>
 
     <RadioGroup
