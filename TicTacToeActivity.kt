@@ -18,6 +18,8 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener {
     // TODO (suggested): maintain a reference to a TicTacToe object
 
     val tictactoe = TicTacToe
+    // Maybe try val tictactoe = null
+    // we don't entirely know what to classify tictactoe as at first
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
