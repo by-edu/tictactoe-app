@@ -53,6 +53,7 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener {
     override fun onClick(view: View?) {
         // this method is used whenever a button is clicked, make sure buttons disabled after button press
         // you can see what button is pressed by getting access to the view, just like in MainActivity with the radiobuttons i think
+        // check for each turn and if game is over after each move!!!!!
     }
 
 
