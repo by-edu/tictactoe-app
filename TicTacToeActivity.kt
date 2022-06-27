@@ -20,6 +20,8 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener {
     val tictactoe = TicTacToe
     // Maybe try val tictactoe = null
     // we don't entirely know what to classify tictactoe as at first
+    // tictactoe should be an instance variable that other classes can maybe access
+    // val tictactoe : TicTacToe? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
