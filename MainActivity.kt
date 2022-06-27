@@ -22,16 +22,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // TODO (suggested): get a reference to the "play" button and use it to set its "onClick" listener to MainActivity
+        // TODOd (suggested): get a reference to the "play" button and use it to set its "onClick" listener to MainActivity
         val btnPlay = findViewById<Button>(R.id.btnPlay)
-        btnPlay.setOnClickListener {
-
-            // onClick is used in xml file i think????
-
-        }
+        btnPlay.setOnClickListener(this)
     }
 
-    // TODO (suggested): get the player's name, symbol, and the first move choice; pass info to the TicTacToe activity
+    // TODOd (suggested): get the player's name, symbol, and the first move choice; pass info to the TicTacToe activity
     override fun onClick(p0: View?) {
 
         val editName = findViewById<EditText>(R.id.edtName)
@@ -41,6 +37,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val rgSymbolSelect: RadioGroup = findViewById(R.id.radioSymbol)
         val rgTurn: RadioGroup = findViewById(R.id.radioTurn)
         // These should link to each radio group
+
+        val rbNoughts : RadioButton = findViewById(R.id.radioNoughts)
+        val rbCrosses : RadioButton = findViewById(R.id.radioCrosses)
+
+        val rbIsFirst : RadioButton = findViewById(R.id.buttonYes)
+        val rbIsSecond: RadioButton = findViewById(R.id.buttonNo)
 
         val rbChosenSymbol : RadioButton = findViewById(rgSymbolSelect.checkedRadioButtonId)
         // id should be either 'radioNoughts' or 'radioCrosses'
@@ -54,7 +56,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // This is just to test if the override and the editname works
 
         val intent = Intent(this, TicTacToeActivity::class.java)
-        intent.putExtra("dataEnter", grabbedName)
+        intent.putExtra("name", grabbedName)
+
+        if (rbChosenSymbol == rbNoughts){
+        intent.putExtra("symbol", 'O')
+        } else if (rbChosenSymbol == rbCrosses){
+        intent.putExtra("symbol" , 'X')
+        }
+
+        if (rbChosenTurn == rbIsFirst){
+        intent.putExtra("turn", true)
+        } else if (rbChosenTurn == rbIsSecond){
+        intent.putExtra("turn", false)
+        }
+
         startActivity(intent)
         // This should start the tictactoe class i believe
         // i think this is also used to move data to next activity...

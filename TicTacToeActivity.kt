@@ -17,13 +17,22 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener {
 
     // TODO (suggested): maintain a reference to a TicTacToe object
 
+    val tictactoe = TicTacToe
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tictactoe)
 
         // TODO (suggested): get the player's name, symbol, and the first move choice from the activity's intent; use them to instantiate a TicTacToe game; decide whether the computer should play based on the first move choice
-
+        val grabbedName = intent.getStringExtra("name")
+        val playerSymbol = intent.getCharExtra("symbol", '.')
+        val playerTurn = intent.getBooleanExtra("turn", false)
+            // playerturn works fine!
         // TODO (suggested): get a reference to the TextView "player info" area; update the TextView with the player's name and symbol
+        val playerInfo : TextView = findViewById(R.id.playerInfo)
+
+
+        playerInfo.setText("Player $grabbedName is using $playerSymbol")
 
         // TODO (suggested): using a loop and button tags, update their texts and "onClick" listeners to TicTacToeActivity; remember to disable the button if it corresponds to a computer's first move
         // hint: use "findViewWithTag"
@@ -50,3 +59,4 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener {
         super.onRestoreInstanceState(savedIntanceState)
     }
 }
+
