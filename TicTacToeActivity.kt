@@ -32,6 +32,7 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener {
         val playerSymbol = intent.getCharExtra("symbol", '.')
         val playerTurn = intent.getBooleanExtra("turn", false)
             // playerturn works fine!
+        // i think here you save the reference to tictactoe, like tictactoe = -grabbed info-
         // TODO (suggested): get a reference to the TextView "player info" area; update the TextView with the player's name and symbol
         val playerInfo : TextView = findViewById(R.id.playerInfo)
 
