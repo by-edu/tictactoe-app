@@ -16,9 +16,7 @@ import java.io.Serializable
 class TicTacToeActivity : AppCompatActivity(),View.OnClickListener, Serializable {
 
     // TODOd (suggested): maintain a reference to a TicTacToe object
-
     var tictactoe : TicTacToe? = null
-    //private var tttactivity : TicTacToeActivity?  = null
 
     private var buttons = arrayOf<Array<Button?>>(arrayOfNulls<Button>(3), arrayOfNulls<Button>(3), arrayOfNulls<Button>(3))
 
@@ -30,7 +28,6 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener, Serializable
         val grabbedName = intent.getStringExtra("name")
         val playerSymbol = intent.getCharExtra("symbol", ' ')
         val playerTurn = intent.getBooleanExtra("turn", false)
-            // playerturn works fine!
 
         tictactoe = TicTacToe(grabbedName.toString(), playerSymbol)
 
@@ -38,9 +35,8 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener, Serializable
         val playerInfo : TextView = findViewById(R.id.playerInfo)
         playerInfo.setText("Player $grabbedName is using $playerSymbol")
 
-        // TODO (suggested): using a loop and button tags, update their texts and "onClick" listeners to TicTacToeActivity; remember to disable the button if it corresponds to a computer's first move
+        // TODOd (suggested): using a loop and button tags, update their texts and "onClick" listeners to TicTacToeActivity; remember to disable the button if it corresponds to a computer's first move
         // hint: use "findViewWithTag"
-
         for (i in 0..2 ) {
             for(j in 0..2){
                 var btnName : String = "btn$i$j"
@@ -48,19 +44,12 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener, Serializable
 
                 buttons[i][j] = findViewById(btnID)
                 buttons[i][j]?.setOnClickListener(this)
-
-
-                // oh, this is gonna fry your computer maybe lol
-                // https://stackoverflow.com/questions/60899066/android-studio-kotlin-two-dimensional-button-array-got-java-lang-arrayindexoutof
-                // PLEEEEEASE look at this link
-
             }
         }
 
         if (!playerTurn){
             tictactoe?.computerPlay()
             val split = tictactoe?.lastMove
-
 
             buttons[split?.first!!][split?.second!!]!!.isEnabled = false
             buttons[split?.first!!][split?.second!!]!!.text = tictactoe?.getComputerSymbol().toString()
@@ -89,9 +78,7 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener, Serializable
         var i: Int = btnLoc.get(0).toString().toInt()
         var j: Int = btnLoc.get(1).toString().toInt()
 
-
         (view as Button)
-
         if (view.text != null){
             view.isEnabled = false
         }
@@ -100,7 +87,6 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener, Serializable
             view.isEnabled = false
             view.text = tictactoe?.playerSymbol.toString()
         }
-
         if (tictactoe?.isGameOver() == true){
             showResults()
             } else {
@@ -108,11 +94,9 @@ class TicTacToeActivity : AppCompatActivity(),View.OnClickListener, Serializable
                 buttons[tictactoe?.lastMove?.first!!][tictactoe?.lastMove?.second!!]!!.isEnabled = false
                 buttons[tictactoe?.lastMove?.first!!][tictactoe?.lastMove?.second!!]!!.text = tictactoe?.getComputerSymbol().toString()
             }
-
         if (tictactoe?.isGameOver() == true){
             showResults()
-        }
-
+            }
         }
 
 

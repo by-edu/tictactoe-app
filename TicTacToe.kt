@@ -194,6 +194,30 @@ class TicTacToe(playerName: String, playerSymbol: Char = NOUGHTS): Serializable 
                     board[i][j] = getComputerSymbol()
                     lastMove = Pair(i, j)
                     return true
+                } else if(board[0][0] === playerSymbol && board[2][2] === playerSymbol && board[1][1] === BLANK){
+                    board[1][1] = getComputerSymbol()
+                    lastMove = Pair(1, 1)
+                    return true
+                } else if(board[0][0] === playerSymbol && board[0][1] === playerSymbol && board[0][2] === BLANK){
+                    board[0][2] = getComputerSymbol()
+                    lastMove = Pair(0,2)
+                    return true
+                } else if (board[2][0] === playerSymbol && board[0][2] === playerSymbol && board[1][1] === BLANK){
+                    board[1][1] = getComputerSymbol()
+                    lastMove = Pair(1, 1)
+                    return true
+                } else if (board[1][0] === playerSymbol && board[1][2] == playerSymbol && board[1][1] === BLANK){
+                    board[1][1] = getComputerSymbol()
+                    lastMove = Pair(1, 1)
+                    return true
+                } else if (board[2][2] === playerSymbol && board[1][1] == playerSymbol && board[0][0] === BLANK){
+                    board[0][0] = getComputerSymbol()
+                    lastMove = Pair(0, 0)
+                    return true
+                } else if (board[2][0] === playerSymbol && board[2][2] == playerSymbol && board[2][1] === BLANK){
+                    board[2][1] = getComputerSymbol()
+                    lastMove = Pair(2, 1)
+                    return true
                 }
             }
         }
