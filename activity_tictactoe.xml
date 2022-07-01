@@ -28,19 +28,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn00"/>
+            android:id="@+id/btn00"
+            android:freezesText="true"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn01"/>
+            android:id="@+id/btn01"
+            android:freezesText="true"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn02"/>
+            android:id="@+id/btn02"
+            android:freezesText="true"/>
 
     </LinearLayout>
 
@@ -53,19 +56,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn10"/>
+            android:id="@+id/btn10"
+            android:freezesText="true"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn11"/>
+            android:id="@+id/btn11"
+            android:freezesText="true"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn12"/>
+            android:id="@+id/btn12"
+            android:freezesText="true"/>
 
     </LinearLayout>
 
@@ -78,19 +84,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn20"/>
+            android:id="@+id/btn20"
+            android:freezesText="true"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn21"/>
+            android:id="@+id/btn21"
+            android:freezesText="true"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btn22"/>
+            android:id="@+id/btn22"
+            android:freezesText="true"/>
 
     </LinearLayout>
 
